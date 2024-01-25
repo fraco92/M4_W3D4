@@ -1,6 +1,9 @@
-import { typeOfSearch, searchInput } from "./script.js";
+import { userTable } from "./script.js";
 
-export const filterUsers = (usersList) => {
+const typeOfSearch = document.getElementById("type-of-search");
+const searchInput = document.getElementById("search-input");
+
+const filterUsers = (usersList) => {
   const searchValue = searchInput.value.toLowerCase();
   const searchType = typeOfSearch.value;
 
@@ -9,7 +12,7 @@ export const filterUsers = (usersList) => {
   );
 };
 
-export const searchForm = () => {
+export const searchForm = (usersList) => {
   searchInput.addEventListener("input", () => {
     userTable(filterUsers(usersList));
   });
